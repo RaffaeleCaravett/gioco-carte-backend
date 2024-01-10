@@ -1,9 +1,10 @@
 package com.example.giocoCarte.security;
 
-import com.example.TerraMia.User.User;
-import com.example.TerraMia.User.UserRepository;
-import com.example.TerraMia.exceptions.UnauthorizedException;
-import com.example.TerraMia.payloads.entities.Token;
+
+import com.example.giocoCarte.exceptions.UnauthorizedException;
+import com.example.giocoCarte.payloads.entities.Token;
+import com.example.giocoCarte.user.User;
+import com.example.giocoCarte.user.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;

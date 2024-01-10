@@ -1,6 +1,7 @@
 package com.example.giocoCarte.security;
 
 
+import com.example.giocoCarte.exceptions.UnauthorizedException;
 import com.example.giocoCarte.user.User;
 import com.example.giocoCarte.user.UserService;
 import jakarta.servlet.FilterChain;

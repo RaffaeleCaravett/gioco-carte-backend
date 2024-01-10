@@ -1,6 +1,6 @@
 package com.example.giocoCarte.security;
 
-import com.example.TerraMia.exceptions.ExceptionsHandlerFilter;
+import com.example.giocoCarte.exceptions.ExceptionsHandlerFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

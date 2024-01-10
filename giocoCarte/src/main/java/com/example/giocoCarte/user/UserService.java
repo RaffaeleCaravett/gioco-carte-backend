@@ -1,5 +1,7 @@
 package com.example.giocoCarte.user;
 
+import com.example.giocoCarte.exceptions.NotFoundException;
+import com.example.giocoCarte.payloads.entities.UserRegistrationDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,5 +1,7 @@
 package com.example.giocoCarte.user;
 
+import com.example.giocoCarte.exceptions.NotFoundException;
+import com.example.giocoCarte.payloads.entities.UserRegistrationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
