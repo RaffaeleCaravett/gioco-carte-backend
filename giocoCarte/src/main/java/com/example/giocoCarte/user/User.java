@@ -1,5 +1,6 @@
 package com.example.giocoCarte.user;
 
+import com.example.giocoCarte.classifica.Classifica;
 import com.example.giocoCarte.enums.Role;
 import com.example.giocoCarte.partita.Partita;
 import jakarta.persistence.*;
@@ -26,6 +27,9 @@ public class User implements UserDetails {
     private String password;
     @OneToMany(mappedBy = "user")
     List<Partita> partite;
+    @ManyToOne
+    @JoinColumn(name = "classifica_id")
+    private Classifica classifica;
 
     private Role role;
     @Override
