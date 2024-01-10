@@ -1,8 +1,8 @@
 package com.example.giocoCarte.security;
 
-import com.example.TerraMia.User.User;
-import com.example.TerraMia.User.UserService;
-import com.example.TerraMia.exceptions.UnauthorizedException;
+
+import com.example.giocoCarte.user.User;
+import com.example.giocoCarte.user.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
