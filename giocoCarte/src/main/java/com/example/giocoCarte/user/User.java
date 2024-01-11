@@ -3,6 +3,7 @@ package com.example.giocoCarte.user;
 import com.example.giocoCarte.classifica.Classifica;
 import com.example.giocoCarte.enums.Role;
 import com.example.giocoCarte.partita.Partita;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,12 +26,14 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private String password;
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     List<Partita> partite;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "classifica_id")
     private Classifica classifica;
-
+    @Enumerated(EnumType.STRING)
     private Role role;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

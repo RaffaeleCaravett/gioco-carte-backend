@@ -30,7 +30,7 @@ public class PartitaController {
         return partitaService.findAll();
     }
     @GetMapping("/${id}")
-    public List<Partita> getAll(@PathVariable long id){
+    public List<Partita> getAllByUserId(@PathVariable long id){
         return partitaService.findByUserId(id);
     }
 }

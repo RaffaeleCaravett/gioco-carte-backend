@@ -15,5 +15,6 @@ public class Carta {
     private long id;
     private int value;
     private String color;
+    @Enumerated(EnumType.STRING)
     private CartType cartType;
 }
