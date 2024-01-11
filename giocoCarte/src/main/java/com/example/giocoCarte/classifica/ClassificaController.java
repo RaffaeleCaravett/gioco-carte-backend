@@ -19,7 +19,7 @@ Classifica classifica= new Classifica();
         return classifica.getId();
     }
 
-    @GetMapping("/${id}")
+    @GetMapping("/{id}")
     public List<User> getUsers(@PathVariable long id){
         return classificaService.getUsersByClassificaId(id);
     }
