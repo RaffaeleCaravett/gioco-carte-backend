@@ -22,7 +22,7 @@ public class ClassificaService {
     public List<Partita> getPartiteByClassificaId(long id){
         Classifica classifica= classificaRepository.findById(id).get();
         List<Partita> partitaList = classifica.getPartita();
-        partitaList.sort(Comparator.comparingLong(Partita::getPunteggio));
+        partitaList.sort(Comparator.comparingLong(Partita::getPunteggio).reversed());
         return partitaList;
     }
 }
