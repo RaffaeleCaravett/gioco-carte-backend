@@ -5,6 +5,8 @@ import com.example.giocoCarte.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -19,6 +21,8 @@ public class ClassificaService {
 
     public List<Partita> getPartiteByClassificaId(long id){
         Classifica classifica= classificaRepository.findById(id).get();
-        return classifica.getPartita();
+        List<Partita> partitaList = classifica.getPartita();
+        partitaList.sort(Comparator.comparingLong(Partita::getPunteggio));
+        return partitaList;
     }
 }
