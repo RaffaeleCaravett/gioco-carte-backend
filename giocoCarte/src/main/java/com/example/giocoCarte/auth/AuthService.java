@@ -3,6 +3,7 @@ package com.example.giocoCarte.auth;
 
 
 import com.example.giocoCarte.classifica.ClassificaRepository;
+import com.example.giocoCarte.enums.Role;
 import com.example.giocoCarte.exceptions.BadRequestException;
 import com.example.giocoCarte.exceptions.UnauthorizedException;
 import com.example.giocoCarte.payloads.entities.Token;
@@ -60,6 +61,7 @@ public class AuthService {
         newUser.setNome(body.nome());
         newUser.setUsername(body.username());
         newUser.setClassifica(classificaRepository.findById(1L).get());
+        newUser.setRole(Role.USER);
         userRepository.save(newUser);
 
         return newUser;

@@ -14,6 +14,8 @@ public class Partita {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long punteggio;
+    private int minuti;
+    private int secondi;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

@@ -21,6 +21,8 @@ public class PartitaService {
         Partita p = new Partita();
 
         p.setPunteggio(partita.punteggio());
+        p.setMinuti(partita.minuti());
+        p.setSecondi(partita.secondi());
         p.setUser(userRepository.findById(partita.user_id()).get());
 
         partitaRepository.save(p);

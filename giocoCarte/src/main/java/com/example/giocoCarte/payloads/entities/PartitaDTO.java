@@ -4,8 +4,12 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 public record PartitaDTO(
-        @NotEmpty(message="Il punteggio non può essere vuoto")
+        @NotNull(message="Il punteggio non può essere vuoto")
         long punteggio,
+        @NotNull(message="I minuti non possono essere vuoti")
+        int minuti,
+        @NotNull(message="Il punteggio non possono essere vuoti")
+        int secondi,
         @NotNull(message="lo user_id non può essere null")
         Long user_id
 ) {
