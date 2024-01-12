@@ -1,9 +1,11 @@
 package com.example.giocoCarte.classifica;
 
+import com.example.giocoCarte.partita.Partita;
 import com.example.giocoCarte.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.cfg.context.ParameterTarget;
 
 import java.util.List;
 
@@ -16,5 +18,5 @@ public class Classifica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @OneToMany(mappedBy = "classifica")
-    private List<User> user;
+    private List<Partita> partita;
 }

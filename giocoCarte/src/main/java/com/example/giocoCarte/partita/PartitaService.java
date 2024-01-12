@@ -1,5 +1,6 @@
 package com.example.giocoCarte.partita;
 
+import com.example.giocoCarte.classifica.ClassificaRepository;
 import com.example.giocoCarte.exceptions.NotFoundException;
 import com.example.giocoCarte.payloads.entities.PartitaDTO;
 import com.example.giocoCarte.payloads.entities.UserRegistrationDTO;
@@ -15,6 +16,8 @@ public class PartitaService {
     @Autowired
     private PartitaRepository partitaRepository;
     @Autowired
+    private ClassificaRepository classificaRepository;
+    @Autowired
     private UserRepository userRepository;
 
     public long save(PartitaDTO partita) throws NotFoundException {
@@ -24,7 +27,7 @@ public class PartitaService {
         p.setMinuti(partita.minuti());
         p.setSecondi(partita.secondi());
         p.setUser(userRepository.findById(partita.user_id()).get());
-
+        p.setClassifica(classificaRepository.findById(1L).get());
         partitaRepository.save(p);
         return p.getId();
     }
