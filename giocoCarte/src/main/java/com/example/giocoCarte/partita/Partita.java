@@ -2,6 +2,7 @@ package com.example.giocoCarte.partita;
 
 import com.example.giocoCarte.classifica.Classifica;
 import com.example.giocoCarte.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,7 @@ public class Partita {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "classifica_id")
     private Classifica classifica;
