@@ -1,5 +1,6 @@
 package com.example.giocoCarte.classifica;
 
+import com.example.giocoCarte.partita.Partita;
 import com.example.giocoCarte.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,8 +24,8 @@ Classifica classifica= new Classifica();
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('USER')")
-    public List<User> getUsers(@PathVariable long id){
-        return classificaService.getUsersByClassificaId(id);
+    public List<Partita> getUsers(@PathVariable long id){
+        return classificaService.getPartiteByClassificaId(id);
     }
 
 }

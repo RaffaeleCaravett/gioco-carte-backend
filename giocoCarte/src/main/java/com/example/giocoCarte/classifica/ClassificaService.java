@@ -1,5 +1,6 @@
 package com.example.giocoCarte.classifica;
 
+import com.example.giocoCarte.partita.Partita;
 import com.example.giocoCarte.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,8 @@ public class ClassificaService {
     return classifica.getId();
     }
 
-    public List<User> getUsersByClassificaId(long id){
+    public List<Partita> getPartiteByClassificaId(long id){
         Classifica classifica= classificaRepository.findById(id).get();
-        return classifica.getUser();
+        return classifica.getPartita();
     }
 }
